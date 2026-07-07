@@ -1,0 +1,93 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the leading "/"
+---
+
+<header class="header glass">
+  <div class="container nav-container">
+    <a href="/" class="logo">
+      <span class="logo-icon">💧</span>
+      Feutairo
+    </a>
+    
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/" class={currentPath === "" ? "active" : ""}>Accueil</a></li>
+        <li><a href="/services" class={currentPath === "services" ? "active" : ""}>Services</a></li>
+        <li><a href="/locations" class={currentPath === "locations" ? "active" : ""}>Zones</a></li>
+        <li><a href="/about" class={currentPath === "about" ? "active" : ""}>À Propos</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a href="/contact" class="btn btn-primary">Nous Contacter</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 80px;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo-icon {
+    font-size: 1.8rem;
+  }
+
+  .main-nav ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .main-nav a {
+    font-weight: 500;
+    color: var(--text-muted);
+    position: relative;
+  }
+
+  .main-nav a:hover, .main-nav a.active {
+    color: var(--text-color);
+  }
+
+  .main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: var(--transition);
+  }
+
+  .main-nav a:hover::after, .main-nav a.active::after {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none; /* simple mobile handling for now */
+    }
+  }
+</style>

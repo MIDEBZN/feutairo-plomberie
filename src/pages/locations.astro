@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const locations = [
+  "Anderlecht", "Auderghem", "Berchem-Sainte-Agathe", "Bruxelles-Ville",
+  "Etterbeek", "Evere", "Forest", "Ganshoren", "Ixelles", "Jette",
+  "Koekelberg", "Molenbeek-Saint-Jean", "Saint-Gilles", "Saint-Josse-ten-Noode",
+  "Schaerbeek", "Uccle", "Watermael-Boitsfort", "Woluwe-Saint-Lambert", "Woluwe-Saint-Pierre"
+];
+---
+
+<Layout title="Zones d'Intervention | Feutairo" description="Nous intervenons dans toutes les communes de Bruxelles. Découvrez nos zones couvertes pour vos dépannages plomberie.">
+  <div class="page-header section text-center">
+    <div class="container">
+      <h1 class="text-gradient">Nos Zones d'Intervention</h1>
+      <p class="subtitle">Où que vous soyez à Bruxelles, nous sommes à moins de 30 minutes de chez vous.</p>
+    </div>
+  </div>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="glass locations-container animate-fade-in">
+        <div class="locations-info">
+          <h2>Couverture complète sur Bruxelles</h2>
+          <p>L'équipe Feutairo est stratégiquement répartie dans la capitale pour garantir des délais d'intervention extrêmement rapides, surtout en cas d'urgence.</p>
+          <a href="/contact" class="btn btn-primary mt-4">Demander une intervention</a>
+        </div>
+        
+        <div class="locations-grid">
+          {locations.map((loc) => (
+            <div class="location-item">
+              <span class="dot"></span>
+              {loc}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: radial-gradient(circle at center, rgba(37,99,235,0.1) 0%, transparent 70%);
+  }
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .pt-0 {
+    padding-top: 0;
+  }
+  .locations-container {
+    padding: 4rem;
+    border-radius: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .locations-info h2 {
+    margin-bottom: 1rem;
+  }
+  .locations-info p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  .mt-4 {
+    margin-top: 1rem;
+  }
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .location-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+  }
+  .location-item:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+  }
+  @media (max-width: 968px) {
+    .locations-container {
+      grid-template-columns: 1fr;
+      padding: 2rem;
+    }
+  }
+</style>

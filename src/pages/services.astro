@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Nos Services de Plomberie" description="Découvrez nos services de plomberie et chauffage à Bruxelles : dépannage, installation, entretien.">
+  <div class="page-header section text-center">
+    <div class="container">
+      <h1 class="text-gradient">Nos Services</h1>
+      <p class="subtitle">Une expertise complète pour tous vos besoins en plomberie et chauffage.</p>
+    </div>
+  </div>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="services-list">
+        
+        <div class="glass service-item animate-fade-in">
+          <div class="service-content">
+            <div class="icon">🔧</div>
+            <h2>Dépannage d'Urgence</h2>
+            <p>Une fuite d'eau ? Un tuyau percé ? Nous intervenons 24h/24 et 7j/7 pour sécuriser vos installations et procéder aux réparations nécessaires dans les plus brefs délais.</p>
+            <ul>
+              <li>Recherche de fuite</li>
+              <li>Réparation de tuyauterie</li>
+              <li>Remplacement de robinetterie</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass service-item animate-fade-in delay-100">
+          <div class="service-content">
+            <div class="icon">🔥</div>
+            <h2>Chauffage & Chaudières</h2>
+            <p>Experts en systèmes de chauffage, nous assurons l'installation, l'entretien et la réparation de votre chaudière pour vous garantir confort et sécurité tout l'hiver.</p>
+            <ul>
+              <li>Entretien annuel chaudière</li>
+              <li>Dépannage chauffage</li>
+              <li>Installation pompe à chaleur</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass service-item animate-fade-in delay-200">
+          <div class="service-content">
+            <div class="icon">🪠</div>
+            <h2>Débouchage Canalisation</h2>
+            <p>Éviers, toilettes ou égouts bouchés ? Nos équipements professionnels (haute pression, caméra d'inspection) nous permettent de résoudre le problème efficacement.</p>
+            <ul>
+              <li>Débouchage WC</li>
+              <li>Curage des canalisations</li>
+              <li>Inspection par caméra</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass service-item animate-fade-in delay-300">
+          <div class="service-content">
+            <div class="icon">🛁</div>
+            <h2>Rénovation Salle de Bain</h2>
+            <p>Transformez votre salle de bain avec Feutairo. Nous prenons en charge la conception et l'installation complète de vos nouveaux équipements sanitaires.</p>
+            <ul>
+              <li>Douche à l'italienne</li>
+              <li>Meubles vasques</li>
+              <li>Installation baignoire</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: radial-gradient(circle at center, rgba(37,99,235,0.1) 0%, transparent 70%);
+  }
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .pt-0 {
+    padding-top: 0;
+  }
+  .services-list {
+    display: grid;
+    gap: 3rem;
+  }
+  .service-item {
+    padding: 3rem;
+    border-radius: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  .icon {
+    font-size: 3rem;
+    background: rgba(59, 130, 246, 0.1);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .service-content h2 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+  .service-content p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .service-content ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .service-content ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+  }
+  .service-content ul li::before {
+    content: '✓';
+    color: var(--primary);
+    font-weight: bold;
+  }
+  @media (max-width: 768px) {
+    .service-item {
+      padding: 2rem;
+    }
+  }
+</style>

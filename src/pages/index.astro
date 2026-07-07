@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Plombier Urgence Bruxelles">
+	<section class="hero-section">
+		<div class="container hero-content">
+			<div class="hero-text">
+				<h1 class="animate-fade-in text-gradient">Plombier de Confiance à Bruxelles</h1>
+				<p class="animate-fade-in delay-100 subtitle">
+					Intervention rapide en 30 minutes. Dépannage, installation et entretien de vos installations sanitaires et chauffage par des experts certifiés.
+				</p>
+				<div class="hero-actions animate-fade-in delay-200">
+					<a href="tel:+3221234567" class="btn btn-primary">Appeler Urgence 24/7</a>
+					<a href="/services" class="btn glass">Voir nos services</a>
+				</div>
+			</div>
+			<div class="hero-visual animate-fade-in delay-300">
+				<div class="glass card-feature">
+					<div class="icon">⏱️</div>
+					<h3>Intervention 30 Min</h3>
+					<p>Nous sommes chez vous en moins de 30 minutes pour toute urgence.</p>
+				</div>
+				<div class="glass card-feature">
+					<div class="icon">✅</div>
+					<h3>Devis Gratuit</h3>
+					<p>Transparence totale sur nos prix avant toute intervention.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<h2 class="text-center text-gradient" style="font-size: 2.5rem; margin-bottom: 3rem;">Nos Services</h2>
+			<div class="services-grid">
+				<div class="glass service-card">
+					<div class="icon">🚿</div>
+					<h3>Dépannage Plomberie</h3>
+					<p>Fuites d'eau, canalisations bouchées, robinetterie défectueuse. Nous réparons rapidement.</p>
+					<a href="/services" class="link-more">En savoir plus →</a>
+				</div>
+				<div class="glass service-card">
+					<div class="icon">🔥</div>
+					<h3>Chauffage</h3>
+					<p>Entretien, réparation et installation de chaudières toutes marques.</p>
+					<a href="/services" class="link-more">En savoir plus →</a>
+				</div>
+				<div class="glass service-card">
+					<div class="icon">🚽</div>
+					<h3>Sanitaires</h3>
+					<p>Installation et rénovation de salles de bain, WC, douches à l'italienne.</p>
+					<a href="/services" class="link-more">En savoir plus →</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero-section {
+		min-height: calc(100vh - 80px);
+		display: flex;
+		align-items: center;
+		position: relative;
+		overflow: hidden;
+		padding: 4rem 0;
+	}
+
+	.hero-section::before {
+		content: '';
+		position: absolute;
+		top: -20%;
+		right: -10%;
+		width: 50%;
+		height: 70%;
+		background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(15,23,42,0) 70%);
+		z-index: -1;
+		border-radius: 50%;
+	}
+
+	.hero-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: center;
+	}
+
+	.hero-text h1 {
+		font-size: clamp(3rem, 5vw, 4.5rem);
+		margin-bottom: 1.5rem;
+	}
+
+	.subtitle {
+		font-size: 1.25rem;
+		color: var(--text-muted);
+		margin-bottom: 2.5rem;
+		line-height: 1.6;
+	}
+
+	.hero-actions {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.hero-visual {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.card-feature {
+		padding: 2rem;
+		border-radius: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		transition: transform 0.3s;
+	}
+
+	.card-feature:hover {
+		transform: translateX(-10px);
+	}
+
+	.icon {
+		font-size: 2.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.service-card {
+		padding: 2.5rem;
+		border-radius: 1.5rem;
+		transition: var(--transition);
+	}
+
+	.service-card:hover {
+		transform: translateY(-10px);
+		border-color: rgba(59, 130, 246, 0.3);
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+	}
+
+	.link-more {
+		display: inline-block;
+		margin-top: 1.5rem;
+		color: var(--primary);
+		font-weight: 600;
+	}
+
+	@media (max-width: 968px) {
+		.hero-content {
+			grid-template-columns: 1fr;
+			text-align: center;
+		}
+		.hero-actions {
+			justify-content: center;
+		}
+		.card-feature {
+			align-items: center;
+			text-align: center;
+		}
+		.card-feature:hover {
+			transform: translateY(-10px);
+		}
+	}
+</style>

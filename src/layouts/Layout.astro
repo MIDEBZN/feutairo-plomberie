@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Feutairo - Plomberie professionnelle à Bruxelles. Interventions rapides, installations et dépannages 24/7." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title} | Feutairo Plomberie Bruxelles</title>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		flex: 1;
+		padding-top: 80px; /* Offset for sticky header */
+	}
+</style>

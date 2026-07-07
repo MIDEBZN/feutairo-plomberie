@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="À Propos de Feutairo" description="Découvrez Feutairo, votre entreprise de plomberie locale à Bruxelles avec plus de 15 ans d'expérience.">
+  <div class="page-header section text-center">
+    <div class="container">
+      <h1 class="text-gradient">À Propos de Feutairo</h1>
+      <p class="subtitle">Des artisans plombiers passionnés par leur métier et dévoués à votre confort.</p>
+    </div>
+  </div>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content animate-fade-in">
+          <h2>Notre Histoire</h2>
+          <p>Fondée à Bruxelles, Feutairo est née de la volonté d'offrir un service de plomberie fiable, transparent et hautement professionnel. Forts de plus de 15 années d'expérience dans le domaine, nos artisans plombiers ont su bâtir une réputation de confiance auprès de centaines de clients satisfaits.</p>
+          <p>Nous comprenons qu'une urgence de plomberie peut être stressante. C'est pourquoi nous avons mis en place un système d'intervention rapide couvrant l'ensemble de la région bruxelloise.</p>
+          
+          <div class="stats mt-4">
+            <div class="stat-item">
+              <span class="stat-number text-gradient">15+</span>
+              <span class="stat-label">Années d'expérience</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number text-gradient">24/7</span>
+              <span class="stat-label">Disponibilité</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number text-gradient">100%</span>
+              <span class="stat-label">Satisfaction client</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-values glass animate-fade-in delay-200">
+          <h3>Nos Engagements</h3>
+          <ul class="values-list">
+            <li>
+              <div class="icon">🔍</div>
+              <div>
+                <h4>Transparence totale</h4>
+                <p>Pas de frais cachés. Un devis clair et détaillé avant chaque intervention.</p>
+              </div>
+            </li>
+            <li>
+              <div class="icon">⚡</div>
+              <div>
+                <h4>Réactivité</h4>
+                <p>En cas d'urgence, nous sommes chez vous en moins de 30 minutes.</p>
+              </div>
+            </li>
+            <li>
+              <div class="icon">🛠️</div>
+              <div>
+                <h4>Qualité garantie</h4>
+                <p>Utilisation de matériaux certifiés et travail réalisé dans les règles de l'art.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: radial-gradient(circle at center, rgba(37,99,235,0.1) 0%, transparent 70%);
+  }
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .pt-0 {
+    padding-top: 0;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .about-content h2 {
+    margin-bottom: 1.5rem;
+  }
+  .about-content p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .stats {
+    display: flex;
+    gap: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+  }
+  .stat-label {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+  .about-values {
+    padding: 3rem;
+    border-radius: 1.5rem;
+  }
+  .about-values h3 {
+    margin-bottom: 2rem;
+  }
+  .values-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .values-list li {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .values-list .icon {
+    font-size: 2rem;
+    background: rgba(59, 130, 246, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .values-list h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  .values-list p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  @media (max-width: 968px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
